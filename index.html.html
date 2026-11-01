@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Книжный фестиваль "Читай-Город"</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Подключение шрифтов -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Шапка сайта (Навигация) -->
+    <header class="header">
+        <div class="logo">
+            <span class="logo-icon">📚</span> Читай-Город
+        </div>
+        <nav class="nav">
+            <a href="#" class="nav-link active" onclick="openPage(event, 'home')">Главная</a>
+            <a href="#" class="nav-link" onclick="openPage(event, 'program')">Программа</a>
+            <a href="#" class="nav-link" onclick="openPage(event, 'contacts')">Контакты</a>
+        </nav>
+    </header>
+
+    <!-- Основной контент (Страницы) -->
+    <main>
+        
+        <!-- СТРАНИЦА 1: ГЛАВНАЯ -->
+        <section id="home" class="page active">
+            <div class="hero">
+                <div class="hero-content">
+                    <h1>Фестиваль книги и чтения</h1>
+                    <p>Погрузитесь в мир литературы, встретьтесь с любимыми авторами и найдите свою идеальную книгу.</p>
+                    <button class="btn btn-primary" onclick="document.querySelector('.nav-link:nth-child(2)').click()">Смотреть программу</button>
+                </div>
+            </div>
+
+            <div class="features">
+                <div class="feature-card">
+                    <div class="icon">🎤</div>
+                    <h3>Встречи с авторами</h3>
+                    <p>Прямой диалог с современными писателями и поэтами.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">📖</div>
+                    <h3>Книжные новинки</h3>
+                    <p>Презентации новейших изданий от ведущих издательств.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">💻</div>
+                    <h3>Цифровое чтение</h3>
+                    <p>Зона виртуальных библиотек, подкастов и буктрейлеров.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- СТРАНИЦА 2: ПРОГРАММА -->
+        <section id="program" class="page">
+            <div class="container">
+                <h2 class="section-title">Программа мероприятий</h2>
+                
+                <!-- Фильтр по дням -->
+                <div class="filters">
+                    <button class="filter-btn active" onclick="filterEvents('all', this)">Все дни</button>
+                    <button class="filter-btn" onclick="filterEvents('day1', this)">День 1</button>
+                    <button class="filter-btn" onclick="filterEvents('day2', this)">День 2</button>
+                    <button class="filter-btn" onclick="filterEvents('day3', this)">День 3</button>
+                </div>
+
+                <div class="events-list" id="events-container">
+                    <!-- Карточки событий (генерируются/фильтруются через JS) -->
+                </div>
+            </div>
+        </section>
+
+        <!-- СТРАНИЦА 3: КОНТАКТЫ -->
+        <section id="contacts" class="page">
+            <div class="container contact-container">
+                <div class="contact-info">
+                    <h2 class="section-title">Как нас найти</h2>
+                    <p>📍 <strong>Адрес:</strong> г. Омск, ул. Библиотечная, д. 15</p>
+                    <p>📞 <strong>Телефон:</strong> +7 (999) 123-45-67</p>
+                    <p>✉️ <strong>Email:</strong> info@chitay-gorod.ru</p>
+                    <div class="map-placeholder">
+                        <!-- Имитация карты -->
+                        <span>🗺️ Здесь будет карта</span>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <h2 class="section-title">Оставить заявку</h2>
+                    <form id="feedbackForm" onsubmit="submitForm(event)">
+                        <input type="text" placeholder="Ваше имя" required>
+                        <input type="email" placeholder="Ваш Email" required>
+                        <textarea rows="5" placeholder="Ваше сообщение" required></textarea>
+                        <button type="submit" class="btn btn-primary">Отправить</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Подвал -->
+    <footer class="footer">
+        <p>&copy; 2026 Книжный фестиваль "Читай-Город". Разработано в рамках курсовой работы.</p>
+    </footer>
+
+    <!-- Скрипт -->
+    <script src="script.js"></script>
+</body>
+</html>
